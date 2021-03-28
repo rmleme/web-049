@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="AgenciaNoticia" Class="AgenciaNoticiaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\AgenciaNoticia.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="AgenciaNoticiaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Relatorios" Member="Relatorios">
+    <Type Name="Relatorio">
+      <Column Name="RelatorioId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DataRelatorio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TotalDeVendas" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="TotalDeNoticiasAcessadas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumeroNoticiasVendidas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Usuarios" Member="Usuarios">
+    <Type Name="Usuario">
+      <Column Name="Nome" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UsuarioID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Perfil" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Senha" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Cpf" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Rg" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Noticia" Member="Noticias">
+    <Type Name="Noticia">
+      <Column Name="NoticiaID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Preco" Type="System.Single" DbType="Real" CanBeNull="true" />
+      <Column Name="Vigencia" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Texto" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="MimeType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="FileName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="PedidoId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumeroDeAcessos" Type="System.Int32" DbType="Int" CanBeNull="false" />
+      <Column Name="NumeroDeVendas" Type="System.Int32" DbType="Int" CanBeNull="false" />
+      <Association Name="Pedido_Noticia" Member="Pedido" ThisKey="PedidoId" OtherKey="PedidoId" Type="Pedido" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pedido" Member="Pedidos">
+    <Type Name="Pedido">
+      <Column Name="PedidoId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Data" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="Pedido_Noticia" Member="Noticias" ThisKey="PedidoId" OtherKey="PedidoId" Type="Noticia" />
+    </Type>
+  </Table>
+</Database>

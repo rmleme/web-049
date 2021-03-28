@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="AgenciaNoticia">
+  <DataContextMoniker Name="/AgenciaNoticiaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="43243df8-a2bf-41e0-a6c3-0839d5448f12" absoluteBounds="1.25, 4.125, 2, 1.5891951497395831">
+      <DataClassMoniker Name="/AgenciaNoticiaDataContext/Relatorio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c9dea75b-c72f-4174-a76a-0cf712bc52fb" absoluteBounds="1.2650000000000001, 4.585, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="67bc745d-6c04-45bb-ad05-532326758435" absoluteBounds="4, 4.125, 2, 1.9178898111979166">
+      <DataClassMoniker Name="/AgenciaNoticiaDataContext/Usuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5b778752-86d7-4d32-958b-e4d4c1d49dda" absoluteBounds="4.015, 4.585, 1.9700000000000002, 1.3578898111979165" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="282ce3ea-78be-4ad6-bde0-1203815a2d0d" absoluteBounds="4, 0.875, 2, 2.2465844726562496">
+      <DataClassMoniker Name="/AgenciaNoticiaDataContext/Noticia" />
+      <nestedChildShapes>
+        <elementListCompartment Id="da7c4232-6576-4527-a35a-3efb59d99812" absoluteBounds="4.0150000000000006, 1.335, 1.9700000000000002, 1.68658447265625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d07903c7-1c63-4f75-b672-77c4a9acf361" absoluteBounds="1.25, 1.5, 2, 1.0961531575520835">
+      <DataClassMoniker Name="/AgenciaNoticiaDataContext/Pedido" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7fc54efe-18c4-45f8-8082-be6b1928efc0" absoluteBounds="1.2650000000000001, 1.96, 1.9700000000000002, 0.53615315755208326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.25 : 2.04807657877604); (4 : 2.04807657877604)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/AgenciaNoticiaDataContext/Pedido/Pedido_Noticia" />
+      <nodes>
+        <classShapeMoniker Id="d07903c7-1c63-4f75-b672-77c4a9acf361" />
+        <classShapeMoniker Id="282ce3ea-78be-4ad6-bde0-1203815a2d0d" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
